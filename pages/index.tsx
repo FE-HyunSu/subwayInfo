@@ -6,7 +6,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 const Index = () => {
   const [recoilItem, setRecoilItem] = useRecoilState(dataSet);
-  const serviceKey = process.env.NEXT_PUBLIC_SERVICE_KEY;
+  const serviceKey = process.env.NEXT_PUBLIC_DATA_GO_KR_KEY;
   const apiGet = async () => {
     try {
       const response = await axios.get(
