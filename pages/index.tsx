@@ -1,44 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Sample from "../components/sample/body";
 import axios from "axios";
-
 const Index = () => {
-  const [dataList, setDataList] = useState<any>([]);
+  const serviceKey = process.env.NEXT_PUBLIC_SERVICE_KEY;
   const apiGet = async () => {
     try {
-      let queryParams =
-        "?" +
-        encodeURIComponent("serviceKey") +
-        "=" +
-        process.env.NEXT_PUBLIC_SERVICE_KEY;
-      queryParams +=
-        "&" + encodeURIComponent("pageNo") + "=" + encodeURIComponent("1"); /**/
-      queryParams +=
-        "&" + encodeURIComponent("numOfRows") + "=" + encodeURIComponent("10");
-      queryParams +=
-        "&" + encodeURIComponent("dataType") + "=" + encodeURIComponent("JSON");
-      queryParams +=
-        "&" +
-        encodeURIComponent("CURRENT_DATE") +
-        "=" +
-        encodeURIComponent("2019122010");
-      queryParams +=
-        "&" + encodeURIComponent("HOUR") + "=" + encodeURIComponent("24");
-      queryParams +=
-        "&" + encodeURIComponent("COURSE_ID") + "=" + encodeURIComponent("1");
-      console.log(queryParams);
       const response = await axios.get(
-        `http://apis.data.go.kr/1360000/TourStnInfoService/getTourStnVilageFcst${queryParams}`
+        `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=${serviceKey}&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20221207&base_time=0600&nx=55&ny=127`
       );
       console.log(response.data);
     } catch (e) {
       console.error(e);
-      console.log("error");
     }
   };
 
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_SERVICE_KEY);
     apiGet();
   }, []);
 
