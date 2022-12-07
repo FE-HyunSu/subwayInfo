@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sample from "../components/sample/body";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { dataSet } from "../store";
 import axios from "axios";
-import dayjs from "dayjs";
 const Index = () => {
-  const [recoilItem, setRecoilItem] = useRecoilState(dataSet);
   const serviceKey = process.env.NEXT_PUBLIC_SERVICE_KEY;
   const apiGet = async () => {
     try {
@@ -17,6 +13,10 @@ const Index = () => {
       console.error(e);
     }
   };
+
+  useEffect(() => {
+    apiGet();
+  }, []);
 
   return (
     <>
