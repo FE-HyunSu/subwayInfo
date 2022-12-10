@@ -2,9 +2,12 @@ import axios from "axios";
 const swServiceKey = process.env.NEXT_PUBLIC_DATA_SEOUL_KEY;
 const dataServiceKey = process.env.NEXT_PUBLIC_DATA_GO_KR_KEY;
 
-export const getSubwayInfo = async () => {
+export const getSubwayInfo = async (name: string) => {
+  console.log(name);
   return await axios.get(
-    `http://swopenAPI.seoul.go.kr/api/subway/${swServiceKey}/json/realtimeStationArrival/0/5/서울`
+    `http://swopenAPI.seoul.go.kr/api/subway/${swServiceKey}/json/realtimeStationArrival/1/100/${encodeURIComponent(
+      name
+    )}`
   );
 };
 
