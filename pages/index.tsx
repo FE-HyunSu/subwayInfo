@@ -4,6 +4,7 @@ import { dataSet } from "../store";
 import { getSubwayInfo } from "../api/api";
 import dayjs from "dayjs";
 import ButtonItem from "../components/buttonItem";
+import subwayListData from "../data/subwayList.json";
 
 interface subwayInfoType {
   map: any;
@@ -25,27 +26,21 @@ const Index = () => {
       await console.log(response.data.realtimeArrivalList);
       await setResponseInfo(response.data.realtimeArrivalList);
     } catch (e) {
-      console.log(`error남`, e);
+      console.log(`error : `, e);
     }
   };
 
   return (
     <>
-      <ButtonItem
-        lineNumber={Number(2)}
-        subwayName={`삼성`}
-        clickFunction={subwayInfo}
-      />
-      <ButtonItem
-        lineNumber={Number(2)}
-        subwayName={`잠실`}
-        clickFunction={subwayInfo}
-      />
-      <ButtonItem
-        lineNumber={Number(2)}
-        subwayName={`구로디지털단지`}
-        clickFunction={subwayInfo}
-      />
+      {subwayListData &&
+        subwayListData.map((item: any, idx: number) => (
+          <ButtonItem
+            key={idx}
+            lineNumber={Number(item.lineNumber)}
+            subwayName={item.subwayName}
+            clickFunction={subwayInfo}
+          />
+        ))}
       {responseInfo &&
         responseInfo.map((item: subwayInfoType, idx: number) => (
           <div key={idx}>
