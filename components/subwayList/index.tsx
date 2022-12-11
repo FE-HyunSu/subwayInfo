@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ButtonItem from "../buttonItem";
 import subwayListData from "../../data/subwayList.json";
 import { SubwayListUI } from "./style";

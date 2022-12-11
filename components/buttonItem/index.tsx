@@ -13,7 +13,7 @@ const ButtonItem = ({ lineNumber, subwayName }: ButtonItemType) => {
   const router = useRouter();
   const [stationName, setStationName] = useRecoilState(stationTarget);
   const detailMove = () => {
-    router.push(`/detail?station=${subwayName}`);
+    router.push(`/detail?station=${encodeURIComponent(subwayName)}`);
     setStationName(subwayName);
   };
 

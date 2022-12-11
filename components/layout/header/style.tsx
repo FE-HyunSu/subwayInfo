@@ -2,11 +2,20 @@ import styled from "styled-components";
 
 export const HeaderBox = styled.header`
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   align-items: center;
+  width: 100%;
   height: 5rem;
   padding: 0 1rem;
+  background-color: #fff;
   border: 0.1rem solid #eee;
   box-sizing: border-box;
+  z-index: 10;
+  & + main {
+    margin-top: 5rem;
+  }
   h1 {
     display: flex;
     align-items: center;
