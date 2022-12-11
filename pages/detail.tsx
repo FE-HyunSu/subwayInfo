@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { headerMode } from "../store";
-import { getSubwayInfo } from "../api/api";
+import { getSubwayInfo, getStationFlow } from "../api/api";
 import { useRouter } from "next/router";
 
 interface subwayInfoType {
@@ -34,9 +34,19 @@ const Detail = () => {
     }
   };
 
+  const testInfo = async () => {
+    try {
+      const response = await getStationFlow();
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     setHeaderMode("detail");
     if (stationName !== undefined) subwayInfo(stationName);
+    // testInfo();
   }, [stationName]);
 
   return (
