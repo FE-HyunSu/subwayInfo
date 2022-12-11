@@ -1,4 +1,7 @@
 import { ButtonUI } from "./style";
+import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { stationTarget } from "../../store";
 
 interface ButtonItemType {
   lineNumber: number;
@@ -6,14 +9,17 @@ interface ButtonItemType {
   clickFunction?: any;
 }
 
-const ButtonItem = ({
-  lineNumber,
-  subwayName,
-  clickFunction,
-}: ButtonItemType) => {
+const ButtonItem = ({ lineNumber, subwayName }: ButtonItemType) => {
+  const router = useRouter();
+  const [stationName, setStationName] = useRecoilState(stationTarget);
+  const detailMove = () => {
+    router.push(`/detail?station=${subwayName}`);
+    setStationName(subwayName);
+  };
+
   return (
     <>
-      <ButtonUI onClick={() => clickFunction(subwayName)}>
+      <ButtonUI onClick={() => detailMove()}>
         <span className={`line-` + lineNumber}>{lineNumber}</span>
         <strong>{subwayName}</strong>
       </ButtonUI>

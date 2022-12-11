@@ -14,3 +14,8 @@ export const headerMode = atom({
   key: "headerMode",
   default: "main",
 });
+
+export const stationTarget = atom({
+  key: "stationTarget",
+  default: "",
+});
