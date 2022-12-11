@@ -21,10 +21,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             <meta property="og:title" content="Project title" />
             <meta property="og:description" content="Project description" />
             <meta property="og:image" content="" />
-            <meta
-              http-equiv="Content-Security-Policy"
-              content="upgrade-insecure-requests"
-            ></meta>
             <link rel="icon" href="/favicon.ico" />
             <title>Project Name</title>
           </Head>
