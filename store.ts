@@ -9,3 +9,8 @@ export const dataSet = atom({
     },
   ],
 });
+
+export const headerMode = atom({
+  key: "headerMode",
+  default: "main",
+});

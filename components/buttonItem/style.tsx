@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ButtonUI = styled.button`
   display: flex;
+  width: 100%;
   padding: 1.4rem 2rem;
-  border: 0.1rem solid #eee;
   border-radius: 1rem;
   strong {
     display: flex;
@@ -28,9 +28,6 @@ export const ButtonUI = styled.button`
     &.line-2 {
       background-color: #3e8747;
     }
-  }
-  &:focus {
-    border: 0.1rem solid #eee;
   }
   &:hover {
     strong {

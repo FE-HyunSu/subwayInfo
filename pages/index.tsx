@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { dataSet } from "../store";
+import { headerMode } from "../store";
 import { getSubwayInfo } from "../api/api";
 import dayjs from "dayjs";
 import ButtonItem from "../components/buttonItem";
 import subwayListData from "../data/subwayList.json";
+import SubwayList from "../components/subwayList";
 
 interface subwayInfoType {
   map: any;
@@ -19,8 +20,7 @@ interface subwayInfoType {
 }
 
 const Index = () => {
-  const [recoilItem, setRecoilItem] = useRecoilState(dataSet);
-  const [testArr, setTestArr] = useState<any>();
+  const [isHeaderMode, setHeaderMode] = useRecoilState(headerMode);
   const [responseInfo, setResponseInfo] = useState<subwayInfoType>();
   const subwayInfo = async (name: string) => {
     try {
@@ -32,9 +32,14 @@ const Index = () => {
     }
   };
 
+  useEffect(() => {
+    setHeaderMode("main");
+  }, []);
+
   return (
     <>
-      {subwayListData &&
+      <SubwayList />
+      {/* {subwayListData &&
         subwayListData.map((item: any, idx: number) => (
           <ButtonItem
             key={idx}
@@ -42,7 +47,7 @@ const Index = () => {
             subwayName={item.subwayName}
             clickFunction={subwayInfo}
           />
-        ))}
+        ))} */}
       {responseInfo &&
         responseInfo.map((item: subwayInfoType, idx: number) => (
           <div key={idx}>
