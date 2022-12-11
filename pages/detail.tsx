@@ -26,6 +26,7 @@ const Detail = () => {
   const subwayInfo = async (name: string) => {
     try {
       const response = await getSubwayInfo(name);
+      console.log(response);
       await console.log(response.data.realtimeArrivalList);
       await setResponseInfo(response.data.realtimeArrivalList);
     } catch (e) {
