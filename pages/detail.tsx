@@ -5,6 +5,7 @@ import { getSubwayInfo, getStationFlow } from "../api/api";
 import { useRouter } from "next/router";
 import TrainInfo from "../components/trainInfo";
 import Loading from "../components/loading";
+import Error from "../components/error";
 
 interface subwayInfoType {
   map: any;
@@ -23,6 +24,7 @@ const Detail = () => {
   const [isHeaderMode, setHeaderMode] = useRecoilState(headerMode);
   const [responseInfo, setResponseInfo] = useState<subwayInfoType>();
   const [isLoading, setLoading] = useState<boolean>(true);
+  const [isError, setError] = useState<boolean>(false);
   const [stationName, setStationName] = useState<string | undefined>(
     decodeURIComponent(router.asPath?.split(`station=`)[1]?.split("&")[0])
   );
@@ -34,8 +36,7 @@ const Detail = () => {
       await setResponseInfo(response.data.realtimeArrivalList);
     } catch (e: any) {
       console.log(`error : `, e);
-      if (e && e.code === "ERR_NETWORK") {
-      }
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -50,6 +51,10 @@ const Detail = () => {
     <>
       {isLoading ? (
         <Loading />
+      ) : isError ? (
+        <>
+          <Error />
+        </>
       ) : (
         <>
           {responseInfo &&
