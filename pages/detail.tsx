@@ -51,6 +51,7 @@ const Detail = () => {
               msg1={item.arvlMsg2}
               msg2={item.arvlMsg3}
               updnLine={item.updnLine}
+              btrainNo={item.btrainNo}
             />
             {/* 대상 지하철 역 : 잠실
 열차도착정보를 생성한 시각: 2022-12-13 22:59:28
@@ -60,20 +61,9 @@ const Detail = () => {
 열차번호: 8276
 상하행선구분(2호선 : (내선:0,외선:1),상행,하행): 상행
 열차종류(급행,ITX) : */}
-            <p>대상 지하철 역 : {item.statnNm}</p>
-            <p>열차도착정보를 생성한 시각: {item.recptnDt}</p>
-            <p>첫번째도착메세지 (전역 진입, 전역 도착 등): {item.arvlMsg2}</p>
-            <p>
-              두번째도착메세지 (종합운동장 도착, 12분 후 (광명사거리) 등):{" "}
-              {item.arvlMsg3}
-            </p>
             <p>도착지방면(성수행 - 구로디지털단지방면): {item.trainLineNm}</p>
             <p>열차번호: {item.btrainNo}</p>
-            <p>
-              상하행선구분(2호선 : (내선:0,외선:1),상행,하행): {item.updnLine}
-            </p>
             <p>열차종류(급행,ITX) : {item.btrainSttus}</p>
-
             <p>&nbsp;</p>
           </div>
         ))}

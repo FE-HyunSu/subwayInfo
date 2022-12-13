@@ -7,6 +7,7 @@ interface TrainInfoType {
   msg1: string | undefined;
   msg2: string | undefined;
   updnLine: string | undefined;
+  btrainNo: string | undefined;
 }
 
 const TrainInfo = ({
@@ -15,6 +16,7 @@ const TrainInfo = ({
   msg1,
   msg2,
   updnLine,
+  btrainNo,
 }: TrainInfoType) => {
   return (
     <>
@@ -22,6 +24,7 @@ const TrainInfo = ({
         <div className="inner">
           <strong>
             <span>{msg1}</span>
+            <em>{btrainNo}</em>
           </strong>
           <ul>
             <li>{subWayName + `역`}</li>

@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../../styles/theme";
+
+const trainMotion = keyframes`
+  0%{transform:scale(1,1) translateY(0);}
+  33%{transform:scale(1,1) translateY(-.3rem);}
+  66%{transform:scale(1,1.1) translateY(0);}
+  100%{transform:scale(1,1) translateY(0);}
+`;
 
 export const SubwayBox = styled.div`
   display: block;
@@ -15,15 +22,33 @@ export const SubwayBox = styled.div`
       top: 4rem;
       width: 5rem;
       height: 2rem;
-      border: 0.2rem solid ${theme.color.line2};
-      border-radius: 0.4rem;
       z-index: 5;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0.2rem solid ${theme.color.line2};
+        border-radius: 0.4rem;
+        animation: ${trainMotion} 1s infinite;
+      }
       span {
         position: absolute;
         top: -1.4rem;
         left: 0;
         width: 10rem;
         font-size: 1.1rem;
+      }
+      em {
+        position: absolute;
+        right: 0.2rem;
+        bottom: 0.2rem;
+        font-weight: 700;
+        font-size: 1rem;
+        color: ${theme.color.line2};
+        animation: ${trainMotion} 1s infinite;
       }
     }
     ul {
