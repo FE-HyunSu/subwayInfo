@@ -1,14 +1,21 @@
 import React from "react";
-import { SubwayBox } from "./style";
+import { SubwayBox, SubwayInfo } from "./style";
 
 interface TrainInfoType {
   line: number | undefined;
   subWayName: string | undefined;
   msg1: string | undefined;
   msg2: string | undefined;
+  updnLine: string | undefined;
 }
 
-const TrainInfo = ({ line, subWayName, msg1, msg2 }: TrainInfoType) => {
+const TrainInfo = ({
+  line,
+  subWayName,
+  msg1,
+  msg2,
+  updnLine,
+}: TrainInfoType) => {
   return (
     <>
       <SubwayBox>
@@ -23,6 +30,10 @@ const TrainInfo = ({ line, subWayName, msg1, msg2 }: TrainInfoType) => {
           </ul>
         </div>
       </SubwayBox>
+      <SubwayInfo>
+        <p>지금은 어디? : {msg2}</p>
+        <p>방향 : {updnLine}</p>
+      </SubwayInfo>
     </>
   );
 };

@@ -50,6 +50,7 @@ const Detail = () => {
               subWayName={item.statnNm}
               msg1={item.arvlMsg2}
               msg2={item.arvlMsg3}
+              updnLine={item.updnLine}
             />
             {/* 대상 지하철 역 : 잠실
 열차도착정보를 생성한 시각: 2022-12-13 22:59:28

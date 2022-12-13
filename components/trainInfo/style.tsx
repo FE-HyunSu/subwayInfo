@@ -7,7 +7,7 @@ export const SubwayBox = styled.div`
   .inner {
     display: block;
     position: relative;
-    width: 95%;
+    width: calc(100% - 4rem);
     max-width: 102.4rem;
     margin: auto;
     strong {
@@ -16,13 +16,14 @@ export const SubwayBox = styled.div`
       width: 5rem;
       height: 2rem;
       border: 0.2rem solid ${theme.color.line2};
-      border-radius: 0.6rem;
+      border-radius: 0.4rem;
       z-index: 5;
       span {
         position: absolute;
-        top: -2rem;
+        top: -1.4rem;
         left: 0;
-        font-size: 1.2rem;
+        width: 10rem;
+        font-size: 1.1rem;
       }
     }
     ul {
@@ -58,5 +59,14 @@ export const SubwayBox = styled.div`
         }
       }
     }
+  }
+`;
+
+export const SubwayInfo = styled.div`
+  width: calc(100% - 4rem);
+  p {
+    padding: 0.5rem 0;
+    font-weight: 400;
+    font-size: 1.4rem;
   }
 `;
