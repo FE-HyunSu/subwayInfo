@@ -4,14 +4,18 @@ import { SubwayBox } from "./style";
 interface TrainInfoType {
   line: number | undefined;
   subWayName: string | undefined;
+  msg1: string | undefined;
+  msg2: string | undefined;
 }
 
-const TrainInfo = ({ line, subWayName }: TrainInfoType) => {
+const TrainInfo = ({ line, subWayName, msg1, msg2 }: TrainInfoType) => {
   return (
     <>
       <SubwayBox>
         <div className="inner">
-          <strong>열차아이콘</strong>
+          <strong>
+            <span>{msg1}</span>
+          </strong>
           <ul>
             <li>{subWayName + `역`}</li>
             <li>{subWayName + ` 전 역`}</li>

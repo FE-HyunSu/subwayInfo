@@ -18,6 +18,12 @@ export const SubwayBox = styled.div`
       border: 0.2rem solid ${theme.color.line2};
       border-radius: 0.6rem;
       z-index: 5;
+      span {
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        font-size: 1.2rem;
+      }
     }
     ul {
       display: flex;
