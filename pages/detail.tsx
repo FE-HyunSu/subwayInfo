@@ -4,6 +4,7 @@ import { headerMode } from "../store";
 import { getSubwayInfo, getStationFlow } from "../api/api";
 import { useRouter } from "next/router";
 import TrainInfo from "../components/trainInfo";
+import Loading from "../components/loading";
 
 interface subwayInfoType {
   map: any;
@@ -48,7 +49,7 @@ const Detail = () => {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
         <>
           {responseInfo &&
