@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const SubwayBox = styled.div`
   display: block;
@@ -14,7 +15,7 @@ export const SubwayBox = styled.div`
       top: 4rem;
       width: 5rem;
       height: 2rem;
-      border: 0.2rem solid #3e8747;
+      border: 0.2rem solid ${theme.color.line2};
       border-radius: 0.6rem;
       z-index: 5;
     }
@@ -30,7 +31,7 @@ export const SubwayBox = styled.div`
         left: 0;
         width: 100%;
         height: 0.2rem;
-        background-color: #3e8747;
+        background-color: ${theme.color.line2};
       }
       li {
         position: relative;
@@ -46,7 +47,7 @@ export const SubwayBox = styled.div`
           left: 0;
           width: 1rem;
           height: 1rem;
-          background-color: #3e8747;
+          background-color: ${theme.color.line2};
           border-radius: 100%;
         }
       }

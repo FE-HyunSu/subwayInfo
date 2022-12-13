@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const ButtonUI = styled.button`
   display: flex;
@@ -26,7 +27,7 @@ export const ButtonUI = styled.button`
     transition: 0.2s;
     transform-origin: 100% 50%;
     &.line-2 {
-      background-color: #3e8747;
+      background-color: ${theme.color.line2};
     }
   }
   &:hover {
