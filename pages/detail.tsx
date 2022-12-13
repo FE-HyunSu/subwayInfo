@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { headerMode } from "../store";
 import { getSubwayInfo, getStationFlow } from "../api/api";
 import { useRouter } from "next/router";
+import TrainInfo from "../components/trainInfo";
 
 interface subwayInfoType {
   map: any;
@@ -34,19 +35,8 @@ const Detail = () => {
     }
   };
 
-  const testInfo = async () => {
-    try {
-      const response = await getStationFlow();
-      console.log(response);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
     setHeaderMode("detail");
-    if (stationName !== undefined) subwayInfo(stationName);
-    // testInfo();
   }, [stationName]);
 
   return (
@@ -54,6 +44,7 @@ const Detail = () => {
       {responseInfo &&
         responseInfo.map((item: subwayInfoType, idx: number) => (
           <div key={idx}>
+            <TrainInfo line={2} subWayName={item.statnNm} />
             <p>대상 지하철 역 : {item.statnNm}</p>
             <p>열차도착정보를 생성한 시각: {item.recptnDt}</p>
             <p>첫번째도착메세지 (전역 진입, 전역 도착 등): {item.arvlMsg2}</p>
