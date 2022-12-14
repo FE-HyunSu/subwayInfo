@@ -18,9 +18,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
-            <meta property="og:title" content="Project title" />
-            <meta property="og:description" content="Project description" />
-            <meta property="og:image" content="" />
+            <meta property="og:title" content="SUBWAY ARRIVAL INFORMATION." />
+            <meta
+              property="og:description"
+              content="🚦 SUBWAY ARRIVAL INFORMATION."
+            />
+            <meta property="og:image" content="/img_meta.png" />
             <link rel="icon" href="/favicon.ico" />
             <title>Project Name</title>
           </Head>
