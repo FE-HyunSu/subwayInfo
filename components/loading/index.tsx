@@ -5,7 +5,9 @@ const Loading = () => {
   return (
     <>
       <LoadingBox>
-        <div>loading..</div>
+        <div>
+          <strong className="loading">loading..</strong>
+        </div>
       </LoadingBox>
     </>
   );

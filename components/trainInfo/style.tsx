@@ -16,8 +16,9 @@ export const TitleBox = styled.div`
     max-width: 102.4rem;
     margin: auto;
     h1 {
+      padding-top: 2rem;
       font-weight: 400;
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 `;
@@ -32,10 +33,6 @@ export const SubwayBox = styled.div`
     width: calc(100% - 4rem);
     max-width: 102.4rem;
     margin: auto;
-    h1 {
-      font-weight: 400;
-      font-size: 2rem;
-    }
     strong {
       position: absolute;
       top: 4rem;
@@ -74,6 +71,7 @@ export const SubwayBox = styled.div`
       display: flex;
       position: relative;
       width: 100%;
+      min-height: 12rem;
       &:before {
         content: "";
         position: absolute;
