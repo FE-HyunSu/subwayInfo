@@ -21,12 +21,17 @@ const TrainInfo = ({
 }: TrainInfoType) => {
   const [subwayList, setSubwayList] = useState<any>([]);
   const subwaySet = () => {
+    console.log(subwayListData);
     subwayListData.forEach((item) => {
       if (subwayName === item.subwayName) {
-        setSubwayList(item.lineInfo[0]);
+        console.log(item.lineInfo[0].lineUp);
+        setSubwayList(item.lineInfo[0].lineUp);
       }
     });
   };
+  useEffect(() => {
+    subwaySet();
+  }, []);
   return (
     <>
       <SubwayBox>
@@ -37,9 +42,9 @@ const TrainInfo = ({
           </strong>
           <ul>
             {subwayList &&
-              subwayList.lineUp.map((item: any, idx: number) => {
-                <li key={idx}>{item}</li>;
-              })}
+              subwayList.map((item: any, idx: number) => (
+                <li key={idx}>{item}</li>
+              ))}
           </ul>
         </div>
       </SubwayBox>

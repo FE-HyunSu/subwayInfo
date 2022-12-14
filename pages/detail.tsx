@@ -45,7 +45,7 @@ const Detail = () => {
   useEffect(() => {
     setHeaderMode("detail");
     if (stationName !== undefined) subwayInfo(stationName);
-  }, [stationName]);
+  }, [stationName, isError]);
 
   return (
     <>
