@@ -13,6 +13,29 @@ export const ErrorBox = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    strong {
+      display: block;
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      margin: -2rem auto 1rem;
+      text-indent: -9999rem;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 4rem;
+        height: 4rem;
+        background: url(./images/img_logo_g.png) no-repeat 50% 100% / 100% auto;
+      }
+    }
+    p {
+      line-height: 1.2;
+      text-align: center;
+    }
   }
 `;

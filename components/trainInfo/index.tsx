@@ -42,10 +42,10 @@ const TrainInfo = ({
           <h1>
             {subwayName}역 - {updnLine}
           </h1>
-          <p>현재 열차 위치 : {msg2}</p>
+          <p>현재 위치 : {msg2}</p>
         </div>
       </TitleBox>
-      <SubwayBox>
+      <SubwayBox className={updnLine === "내선" ? `align-right` : ``}>
         <div className="inner">
           <strong>
             <span>{msg1}</span>

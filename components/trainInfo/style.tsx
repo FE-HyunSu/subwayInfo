@@ -20,6 +20,10 @@ export const TitleBox = styled.div`
       font-weight: 400;
       font-size: 1.6rem;
     }
+    p {
+      padding: 0.5rem 0;
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -27,6 +31,26 @@ export const SubwayBox = styled.div`
   display: block;
   position: relative;
   border-bottom: 0.1rem solid #eee;
+  &.align-right {
+    .inner {
+      ul {
+        li {
+          text-align: right;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 6.6rem;
+            right: 0;
+            left: auto;
+            width: 1rem;
+            height: 1rem;
+            background-color: ${theme.color.line2};
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
   .inner {
     display: block;
     position: relative;
