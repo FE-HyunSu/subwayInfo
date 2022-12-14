@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import subwayListData from "../../data/subwayList.json";
-import { SubwayBox, SubwayInfo } from "./style";
+import { TitleBox, SubwayBox } from "./style";
 
 interface TrainInfoType {
   line: number | undefined;
@@ -24,8 +24,11 @@ const TrainInfo = ({
     console.log(subwayListData);
     subwayListData.forEach((item) => {
       if (subwayName === item.subwayName) {
-        console.log(item.lineInfo[0].lineUp);
-        setSubwayList(item.lineInfo[0].lineUp);
+        updnLine === "내선"
+          ? setSubwayList(item.lineInfo[0].lineUp)
+          : updnLine === "외선"
+          ? setSubwayList(item.lineInfo[0].lineDown)
+          : null;
       }
     });
   };
@@ -34,6 +37,14 @@ const TrainInfo = ({
   }, []);
   return (
     <>
+      <TitleBox>
+        <div className="inner">
+          <h1>
+            {subwayName}역 - {updnLine}
+          </h1>
+          <p>현재 열차 위치 : {msg2}</p>
+        </div>
+      </TitleBox>
       <SubwayBox>
         <div className="inner">
           <strong>
@@ -48,10 +59,6 @@ const TrainInfo = ({
           </ul>
         </div>
       </SubwayBox>
-      <SubwayInfo>
-        <p>지금은 어디? : {msg2}</p>
-        <p>방향 : {updnLine}</p>
-      </SubwayInfo>
     </>
   );
 };

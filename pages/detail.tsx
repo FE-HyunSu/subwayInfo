@@ -79,7 +79,6 @@ const Detail = () => {
                 <p>
                   도착지방면(성수행 - 구로디지털단지방면): {item.trainLineNm}
                 </p>
-                <p>열차종류(급행,ITX) : {item.btrainSttus}</p>
                 <p>&nbsp;</p>
               </div>
             ))}

@@ -8,15 +8,34 @@ const trainMotion = keyframes`
   100%{transform:scale(1,1) translateY(0);}
 `;
 
-export const SubwayBox = styled.div`
-  display: block;
-  position: relative;
+export const TitleBox = styled.div`
   .inner {
     display: block;
     position: relative;
     width: calc(100% - 4rem);
     max-width: 102.4rem;
     margin: auto;
+    h1 {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+  }
+`;
+
+export const SubwayBox = styled.div`
+  display: block;
+  position: relative;
+  border-bottom: 0.1rem solid #eee;
+  .inner {
+    display: block;
+    position: relative;
+    width: calc(100% - 4rem);
+    max-width: 102.4rem;
+    margin: auto;
+    h1 {
+      font-weight: 400;
+      font-size: 2rem;
+    }
     strong {
       position: absolute;
       top: 4rem;
@@ -84,14 +103,5 @@ export const SubwayBox = styled.div`
         }
       }
     }
-  }
-`;
-
-export const SubwayInfo = styled.div`
-  width: calc(100% - 4rem);
-  p {
-    padding: 0.5rem 0;
-    font-weight: 400;
-    font-size: 1.4rem;
   }
 `;

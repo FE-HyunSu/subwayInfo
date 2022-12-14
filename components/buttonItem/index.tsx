@@ -6,7 +6,6 @@ import { stationTarget } from "../../store";
 interface ButtonItemType {
   lineNumber: number;
   subwayName: string;
-  clickFunction?: any;
 }
 
 const ButtonItem = ({ lineNumber, subwayName }: ButtonItemType) => {
