@@ -1,7 +1,62 @@
 [
-  { "lineNumber": 2, "subwayName": "삼성" },
-  { "lineNumber": 2, "subwayName": "잠실" },
-  { "lineNumber": 2, "subwayName": "구로디지털단지" },
-  { "lineNumber": 2, "subwayName": "강남" },
-  { "lineNumber": 2, "subwayName": "건대입구" }
+  {
+    "lineNumber": 2,
+    "subwayName": "삼성",
+    "lineInfo": [
+      {
+        "lineNumber": 2,
+        "lineUp": ["삼성", "종합운동장", "잠실새내", "잠실"],
+        "lineDown": ["삼성", "선릉", "역삼", "강남"]
+      }
+    ]
+  },
+  {
+    "lineNumber": 2,
+    "subwayName": "잠실",
+    "lineInfo": [
+      {
+        "lineNumber": 2,
+        "lineUp": ["잠실", "잠실나루", "강변", "구의"],
+        "lineDown": ["잠실", "잠실새내", "종합운동장", "삼성"]
+      }
+    ]
+  },
+  {
+    "lineNumber": 2,
+    "subwayName": "구로디지털단지",
+    "lineInfo": [
+      {
+        "lineNumber": 2,
+        "lineUp": ["구로디지털단지", "신대방", "신림", "봉천"],
+        "lineDown": ["구로디지털단지", "대림", "신도림", "문래"]
+      }
+    ]
+  },
+  {
+    "lineNumber": 2,
+    "subwayName": "강남",
+    "lineInfo": [
+      {
+        "lineNumber": 2,
+        "lineUp": ["강남", "역삼", "선릉", "삼성"],
+        "lineDown": ["강남", "교대", "서초", "방배"]
+      },
+      {
+        "lineNumber": 10,
+        "lineUp": ["강남"],
+        "lineDown": ["강남", "양재", "양재시민의숲", "청계산입구"]
+      }
+    ]
+  },
+  {
+    "lineNumber": 2,
+    "subwayName": "건대입구",
+    "lineInfo": [
+      {
+        "lineNumber": 2,
+        "lineUp": ["건대입구", "성수", "뚝섬", "한양대"],
+        "lineDown": ["건대입구", "구의", "강변", "잠실나루"]
+      }
+    ]
+  }
 ]

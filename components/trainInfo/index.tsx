@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import subwayListData from "../../data/subwayList.json";
 import { SubwayBox, SubwayInfo } from "./style";
 
 interface TrainInfoType {
   line: number | undefined;
-  subWayName: string | undefined;
+  subwayName: string | undefined;
   msg1: string | undefined;
   msg2: string | undefined;
   updnLine: string | undefined;
@@ -12,12 +13,20 @@ interface TrainInfoType {
 
 const TrainInfo = ({
   line,
-  subWayName,
+  subwayName,
   msg1,
   msg2,
   updnLine,
   btrainNo,
 }: TrainInfoType) => {
+  const [subwayList, setSubwayList] = useState<any>([]);
+  const subwaySet = () => {
+    subwayListData.forEach((item) => {
+      if (subwayName === item.subwayName) {
+        setSubwayList(item.lineInfo[0]);
+      }
+    });
+  };
   return (
     <>
       <SubwayBox>
@@ -27,9 +36,10 @@ const TrainInfo = ({
             <em>{btrainNo}</em>
           </strong>
           <ul>
-            <li>{subWayName + `역`}</li>
-            <li>{subWayName + ` 전 역`}</li>
-            <li>{subWayName + ` 전전 역`}</li>
+            {subwayList &&
+              subwayList.lineUp.map((item: any, idx: number) => {
+                <li key={idx}>{item}</li>;
+              })}
           </ul>
         </div>
       </SubwayBox>

@@ -62,7 +62,7 @@ const Detail = () => {
               <div key={idx}>
                 <TrainInfo
                   line={2}
-                  subWayName={item.statnNm}
+                  subwayName={item.statnNm}
                   msg1={item.arvlMsg2}
                   msg2={item.arvlMsg3}
                   updnLine={item.updnLine}
@@ -79,7 +79,6 @@ const Detail = () => {
                 <p>
                   도착지방면(성수행 - 구로디지털단지방면): {item.trainLineNm}
                 </p>
-                <p>열차번호: {item.btrainNo}</p>
                 <p>열차종류(급행,ITX) : {item.btrainSttus}</p>
                 <p>&nbsp;</p>
               </div>
