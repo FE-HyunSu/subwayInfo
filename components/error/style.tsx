@@ -9,8 +9,10 @@ export const ErrorBox = styled.div`
   height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
   div {
-    position: flex;
-    justify: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100%;
+    font-size: 1.8rem;
   }
 `;
