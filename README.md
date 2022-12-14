@@ -2,7 +2,10 @@
 
 ### 🏂 URL
 
-- page : (...soon)
+- page : [https://subwayinfo.netlify.app](https://subwayinfo.netlify.app)
+
+### 🛩 금번 프로젝트에서 경험 하고싶은 주요 기능.
+- 공공 Open API 활용. 장단점 체크.
 
 ### 🪬 내용
 
