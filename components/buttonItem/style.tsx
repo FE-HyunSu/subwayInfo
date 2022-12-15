@@ -4,7 +4,7 @@ import { theme } from "../../styles/theme";
 export const ButtonUI = styled.button`
   display: flex;
   width: 100%;
-  padding: 1.4rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 1rem;
   strong {
     display: flex;
@@ -26,6 +26,7 @@ export const ButtonUI = styled.button`
     border-radius: 100%;
     transition: 0.2s;
     transform-origin: 100% 50%;
+    cursor: pointer;
     &.line-2 {
       background-color: ${theme.color.line2};
     }

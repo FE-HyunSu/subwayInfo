@@ -7,6 +7,9 @@ const SubwayList = () => {
   return (
     <>
       <SubwayListUI>
+        <div className="info">
+          <p>실시간 정보를 확인할 역을 선택해 주세요.</p>
+        </div>
         <ul>
           {subwayListData &&
             subwayListData.map((item: any, idx: number) => (
