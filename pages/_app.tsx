@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             />
             <meta property="og:image" content="/img_meta.png" />
             <link rel="icon" href="/favicon.ico" />
-            <title>Project Name</title>
+            <title>🚦 SUBWAY ARRIVAL INFORMATION.</title>
           </Head>
           <GlobalStyle />
           <ThemeProvider theme={theme}>
