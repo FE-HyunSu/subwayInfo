@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { headerMode } from "../store";
-import { getSubwayInfo, getStationFlow } from "../api/api";
+import { getSubwayInfo } from "../api/api";
 import { useRouter } from "next/router";
 import TrainInfo from "../components/trainInfo";
 import Loading from "../components/loading";
@@ -31,8 +31,6 @@ const Detail = () => {
   const subwayInfo = async (name: string) => {
     try {
       const response = await getSubwayInfo(name);
-      console.log(response);
-      await console.log(response.data.realtimeArrivalList);
       await setResponseInfo(response.data.realtimeArrivalList);
     } catch (e: any) {
       console.log(`error : `, e);
@@ -45,7 +43,7 @@ const Detail = () => {
   useEffect(() => {
     setHeaderMode("detail");
     if (stationName !== undefined) subwayInfo(stationName);
-  }, [stationName, isError]);
+  }, []);
 
   return (
     <>
