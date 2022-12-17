@@ -18,7 +18,7 @@ export const SubwayListUI = styled.div`
     li {
       display: inline-block;
       margin: 0.5rem;
-      border: 0.4rem solid ${theme.color.line2};
+      border: 0.2rem solid ${theme.color.line2};
       border-radius: 6rem;
     }
   }
