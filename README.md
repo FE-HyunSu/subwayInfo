@@ -1,5 +1,7 @@
 ## 🚉 Subway arrival information (지하철 도착정보)
 
+- 공공 API가 빈번하게 오류 발생되어 해당 프로젝트는 진행 보류.
+
 ### 🏂 URL
 
 - page : [https://subwayinfo.netlify.app](https://subwayinfo.netlify.app)
